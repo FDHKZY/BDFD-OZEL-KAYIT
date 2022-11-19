@@ -1,0 +1,51 @@
+(prefix)kayıt
+
+```
+
+$nomention
+
+$onlyForServers[""Sunucu ID"";]
+
+$onlyForChannels[""Kayıt kanal ID"";Bu komutu sadece <#""Kayıt Kanal ID""> kanalında kullanabilirsin.]
+
+$onlyForRoles[""Kayıt Sorumlusu Rol İsmi"";Bu komut için ayarlanmış role sahip olman gerek.]
+
+$argsCheck[>2;]
+
+$onlyIf[$mentioned[1]!=$authorID;Bu komutu kendinizde kullanamazsınız!]
+
+$onlyIf[$mentioned[1]!=""Botunuzun IDsi"";Bu komutu bot üzerinde kullanamazsınız!]
+
+$color[1]
+
+$title[üye kaydı yapıldı!]
+
+$allowMention
+
+$description[
+
+$addField[Kaydı yapan;
+
+$username[$authorID]#$discriminator[$authorID]]
+
+$addField[Kaydı yapılan;
+
+$username[$mentioned[1]]#$discriminator[$mentioned[1]]]
+
+$addField[Yeni ismi;$message[2] $message[3]]
+
+]
+
+$footer[~KEON| Kayıt sistemi]
+
+$allowMention
+
+$changeUsername[$message[2] [ $message[3] ]]
+
+$roleGrant[""+verilecek rol ID""]
+
+$takeRole[""alınacak rol ID""]
+
+$channelSendMessage[""kayıt log kanal ID"";<@$mentioned[<]> kayıt işlemini tamamladı ve aramıza katıldı.]
+
+$embedSuppressErrors[;;1;;;]```
